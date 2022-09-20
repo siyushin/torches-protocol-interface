@@ -1,0 +1,1036 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "provider",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Deposit",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "provider",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Withdraw",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "original_balance",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "original_supply",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "working_balance",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "working_supply",
+				"type": "uint256"
+			}
+		],
+		"name": "UpdateLiquidityLimit",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "admin",
+				"type": "address"
+			}
+		],
+		"name": "CommitOwnership",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "admin",
+				"type": "address"
+			}
+		],
+		"name": "ApplyOwnership",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "rate",
+				"type": "uint256"
+			}
+		],
+		"name": "RewardTokenAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "rate",
+				"type": "uint256"
+			}
+		],
+		"name": "RewardRateChanged",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "proportion",
+				"type": "uint256"
+			}
+		],
+		"name": "PointProportionChanged",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_lp_token",
+				"type": "address"
+			},
+			{
+				"name": "_minter",
+				"type": "address"
+			},
+			{
+				"name": "_admin",
+				"type": "address"
+			},
+			{
+				"name": "_reward_policy_maker",
+				"type": "address"
+			},
+			{
+				"name": "_default_point_rate",
+				"type": "uint256"
+			},
+			{
+				"name": "_point_proportion",
+				"type": "uint256"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"gas": 1994,
+		"inputs": [],
+		"name": "integrate_checkpoint",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 5858567,
+		"inputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "user_checkpoint",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 5776593,
+		"inputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "claimable_tokens",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 1676,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_token",
+				"type": "address"
+			}
+		],
+		"name": "claimed_reward",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1644,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_token",
+				"type": "address"
+			}
+		],
+		"name": "claimable_reward",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1033720,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_token",
+				"type": "address"
+			}
+		],
+		"name": "claimable_reward_write",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 35643,
+		"inputs": [
+			{
+				"name": "_receiver",
+				"type": "address"
+			}
+		],
+		"name": "set_rewards_receiver",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "claim_rewards",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "claim_rewards",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			},
+			{
+				"name": "_receiver",
+				"type": "address"
+			}
+		],
+		"name": "claim_rewards",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 5865079,
+		"inputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "kick",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 3169,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 10637,
+		"inputs": [
+			{
+				"name": "_reward_token",
+				"type": "address"
+			}
+		],
+		"name": "is_reward_token_exist",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1075122,
+		"inputs": [
+			{
+				"name": "_reward_token",
+				"type": "address"
+			},
+			{
+				"name": "_token_per_second",
+				"type": "uint256"
+			}
+		],
+		"name": "add_reward_token",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 1003884,
+		"inputs": [
+			{
+				"name": "_reward_token",
+				"type": "address"
+			},
+			{
+				"name": "_token_per_second",
+				"type": "uint256"
+			}
+		],
+		"name": "set_reward_rate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 36635,
+		"inputs": [
+			{
+				"name": "_is_killed",
+				"type": "bool"
+			}
+		],
+		"name": "set_killed",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 38015,
+		"inputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "commit_transfer_ownership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 37960,
+		"inputs": [],
+		"name": "accept_transfer_ownership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 13826755,
+		"inputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "notifySavingChange",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 1514542,
+		"inputs": [
+			{
+				"name": "_point_proportion",
+				"type": "uint256"
+			}
+		],
+		"name": "set_point_proportion",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 1555882,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "balance_of_write",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"gas": 1658,
+		"inputs": [],
+		"name": "minter",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1688,
+		"inputs": [],
+		"name": "reward_policy_maker",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1718,
+		"inputs": [],
+		"name": "lp_token",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1748,
+		"inputs": [],
+		"name": "controller",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1778,
+		"inputs": [],
+		"name": "voting_escrow",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1808,
+		"inputs": [],
+		"name": "lpTotalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1838,
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 8270,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2113,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "working_balances",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1928,
+		"inputs": [],
+		"name": "working_supply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 1958,
+		"inputs": [],
+		"name": "period",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2097,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "uint256"
+			}
+		],
+		"name": "period_timestamp",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2127,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "uint256"
+			}
+		],
+		"name": "integrate_inv_supply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2263,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "integrate_inv_supply_of",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2293,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "integrate_checkpoint_of",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2323,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "integrate_fraction",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2353,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "reward_rate",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2277,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "uint256"
+			}
+		],
+		"name": "reward_tokens",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2198,
+		"inputs": [],
+		"name": "reward_timestamp",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2228,
+		"inputs": [],
+		"name": "reward_token_length",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2473,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "rewards_receiver",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2503,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "reward_integral",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2748,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			},
+			{
+				"name": "arg1",
+				"type": "address"
+			}
+		],
+		"name": "reward_integral_for",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2348,
+		"inputs": [],
+		"name": "admin",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2378,
+		"inputs": [],
+		"name": "future_admin",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2408,
+		"inputs": [],
+		"name": "is_killed",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2438,
+		"inputs": [],
+		"name": "point_current_epoch_time",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2468,
+		"inputs": [],
+		"name": "point_rate",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2498,
+		"inputs": [],
+		"name": "point_proportion",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2528,
+		"inputs": [],
+		"name": "point_period",
+		"outputs": [
+			{
+				"name": "",
+				"type": "int128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2667,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "uint256"
+			}
+		],
+		"name": "point_period_timestamp",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2697,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "uint256"
+			}
+		],
+		"name": "point_integrate_inv_supply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2833,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "point_integrate_inv_supply_of",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2863,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "point_integrate_checkpoint_of",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"gas": 2893,
+		"inputs": [
+			{
+				"name": "arg0",
+				"type": "address"
+			}
+		],
+		"name": "point_integrate_fraction",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

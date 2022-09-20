@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <circle id="flag-russia@3x-a" cx="12" cy="12" r="12"/>
+    <rect id="flag-russia@3x-c" width="32" height="24" x="0" y="0"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="flag-russia@3x-b" fill="#fff">
+      <use xlink:href="#flag-russia@3x-a"/>
+    </mask>
+    <use fill="#FFF" xlink:href="#flag-russia@3x-a"/>
+    <g mask="url(#flag-russia@3x-b)">
+      <g transform="translate(-4)">
+        <mask id="flag-russia@3x-d" fill="#fff">
+          <use xlink:href="#flag-russia@3x-c"/>
+        </mask>
+        <use fill="#3D58DB" xlink:href="#flag-russia@3x-c"/>
+        <rect width="32" height="8" fill="#F7FCFF" mask="url(#flag-russia@3x-d)"/>
+        <rect width="32" height="8" y="16" fill="#C51918" mask="url(#flag-russia@3x-d)"/>
+      </g>
+    </g>
+  </g>
+</svg>
